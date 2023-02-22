@@ -10,14 +10,16 @@ This is a 'brute force' method that doesn't solve any potential issues with code
 
 Note: Arduino Digital/Analog pins have very small maximum currents. If using this library with a device besides a DHT sensor, make sure its electrical current is within the Arduino pin's current limits.
 
+## Constructor
 
-The initializer takes 3 arguments:
+The constructor takes 3 arguments:
 - VCC_pin: the arduino pin you'd like to power the DHT sensor from.
-- off_interval: The amount of time in milliseconds the power will be cycled off. Amounts less than 2001 will be ignored.
-- max_tries: number of times reset will be attempted. If reset is successful, tries reset. Set to 0 for infinite.
-For instance:
+- off_interval: The amount of time in milliseconds the power will be cycled on and then off. Amounts less than 2001 will be ignored (Unless you modify the MIN_INTERVAL constant within the code).
+- max_tries: number of times reset will be attempted. If reset is successful, tries reset. Set to 0 for infinite tries.
+
+Here's a constructor example, initializing with the power pin set to 4 (VCC_pin), a 4000 ms reset on / off time (off_interval), and 5 maximum reset attempts (max_tries):
 ```Cpp
-HardReset DHT_hardreset(DHTPIN_power, 4000, 5);
+HardReset DHT_hardreset(4, 4000, 5);
 ```
 
 ## Public Functions
