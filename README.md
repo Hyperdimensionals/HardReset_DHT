@@ -73,7 +73,7 @@ void loop() {
 
 ## Credits
 
-The author and maintainer of this library is Brendan Krueger <>
+The author and maintainer of this library is Brendan Krueger
 
 ## License
 
